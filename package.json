@@ -3,6 +3,11 @@
   "version": "0.0.0",
   "description": "A discord bot for ESB",
   "main": "index.js",
+  "repository": {
+    "url": "https://gitlab.com/jbarzegar/jen_bot",
+    "type": "git"
+  },
+  "author": "James Barzegar <james.barzegar@gmail.com>",
   "scripts": {
     "start": "nodemon index.js --config conf/nodemon.json"
   },
