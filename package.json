@@ -1,6 +1,6 @@
 {
   "name": "JenBot",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A discord bot for ESB",
   "main": "index.js",
   "repository": {
