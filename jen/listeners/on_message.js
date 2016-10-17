@@ -1,17 +1,18 @@
 const { logger } = require('../conf/config');
+const voiceChannels = require('../conf/get-connected-clients')();
 
-function checkMessage(message, client, channels) {
-  const voiceChannels = channels();
+function handleHalfVoicers(message, client) {
   // Check to see if user typed in channel where half voice chat rule is enforced
-  if (message.channel.id === '237325959395672064') {
+  if (message.channel.id === '237325959395672064' && message.author.id !== client.user.id) {
     // Check if anyone is in a voice channel
     if (voiceChannels.length === 0) {
-      console.log('No one is in voice');
-      // Delete users message and send reminder
-      message.delete()
-        .then(msg => logger.info(`Deleted message from ${msg.author.id}`))
-        .catch(err => logger.error(err));
-      message.reply('You can\'t talk here unless you are connected to a voice channel');
+      if (message.author.id !== client.user.id) {
+        console.log('No one is in voice');
+        message.delete()
+          .then(msg => logger.info(`Deleted message from ${msg.author.id}`))
+          .catch(err => logger.error(err));
+        message.reply('You can\'t talk here unless you are connected to a voice channel');
+      }
     } else {
       // If there are users connected to a voice channel check if author is in one themselves
       for (let i in voiceChannels) {
@@ -31,6 +32,20 @@ function checkMessage(message, client, channels) {
   }
 }
 
-module.exports = (message, client, channels) => {
-  checkMessage(message, client, channels);
+function checkMessage(message, client) {
+  const content = message.content.toLowerCase();
+  // Check if the phrase 'you people' is in the string
+  if (content.indexOf('you people') !== -1) {
+    // Compare message to make sure that the bot won't keep sending messages
+    if (message.author.id !== client.user.id) {
+      return message.reply('Fuck you mean you people')
+        .then(msg => logger.info(`Reply sent to ${msg.author.id}`))
+        .catch(err => logger.warn(err));
+    }
+  }
+}
+
+module.exports = (message, client) => {
+  handleHalfVoicers(message, client);
+  checkMessage(message, client);
 };
