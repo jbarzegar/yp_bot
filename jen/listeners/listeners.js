@@ -9,7 +9,7 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-  require('./on_message')(message, client, getConnectedClients);
+  require('./on_message')(message, client);
 });
 
 client.on('voiceStateUpdate', (oldMember, newMember) => {

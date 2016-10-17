@@ -1,7 +1,8 @@
 const { logger } = require('../conf/config');
-const voiceChannels = require('../conf/get-connected-clients')();
+const Channels = require('../conf/get-connected-clients');
 
 function handleHalfVoicers(message, client) {
+  const voiceChannels = Channels();
   // Check to see if user typed in channel where half voice chat rule is enforced
   if (message.channel.id === '237325959395672064' && message.author.id !== client.user.id) {
     // Check if anyone is in a voice channel
