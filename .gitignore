@@ -1,4 +1,8 @@
 # npm
 node_modules/
+
 # Log files
 *.log
+
+# Vagrant
+eve/.vagrant
