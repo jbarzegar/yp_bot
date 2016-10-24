@@ -9,7 +9,7 @@
   },
   "author": "James Barzegar <james.barzegar@gmail.com>",
   "scripts": {
-    "start": "nodemon index.js --config conf/nodemon.json"
+    "start": "nodemon jen/index.js --config jen/conf/nodemon.json"
   },
   "license": "MIT",
   "engineStrict": true,
@@ -17,11 +17,11 @@
     "node": "6.7.0"
   },
   "dependencies": {
+    "chalk": "^1.1.3",
     "bluebird": "^3.4.6",
     "discord.js": "^9.3.0"
   },
   "devDependencies": {
-    "chalk": "^1.1.3",
     "eslint": "^3.8.0",
     "eslint-config-standard": "^6.2.0",
     "eslint-plugin-promise": "^3.0.0",
