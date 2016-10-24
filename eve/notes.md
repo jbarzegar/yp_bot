@@ -2,7 +2,7 @@
 
 Eve is the backend for Jen.  All settings are stored in Eve.
 
-Eve is built on NodeJs - Express - and Postgres
+Eve is built on NodeJs - Express - and Mongo
 
 ## Function
 Eve's function is to store and serve settings.  Basically Eve is interfaced with by both Jen and Cecile
