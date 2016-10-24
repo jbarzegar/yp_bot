@@ -9,7 +9,7 @@
   },
   "author": "James Barzegar <james.barzegar@gmail.com>",
   "scripts": {
-    "start": "nodemon index.js --config conf/nodemon.json"
+    "start": "nodemon jen/index.js --config jen/conf/nodemon.json"
   },
   "license": "MIT",
   "engineStrict": true,
