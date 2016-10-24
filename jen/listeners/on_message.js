@@ -4,7 +4,7 @@ const Channels = require('../conf/get-connected-clients');
 function handleHalfVoicers(message, client) {
   const voiceChannels = Channels();
   // Check to see if user typed in channel where half voice chat rule is enforced
-  if (message.channel.id === '237325959395672064' && message.author.id !== client.user.id) {
+  if (message.channel.id === '214903274040459266' && message.author.id !== client.user.id) {
     // Check if anyone is in a voice channel
     if (voiceChannels.length === 0) {
       if (message.author.id !== client.user.id) {
@@ -12,7 +12,9 @@ function handleHalfVoicers(message, client) {
         message.delete()
           .then(msg => logger.info(`Deleted message from ${msg.author.id}`))
           .catch(err => logger.error(err));
-        message.reply('You can\'t talk here unless you are connected to a voice channel');
+        // Send message to user
+        console.log(message.guild.name);
+        message.author.sendMessage(`Hey you just tried to talk in channel: ${message.channel.name} in server:${message.guild.name}.  You can't do that shit fam`);
       }
     } else {
       // If there are users connected to a voice channel check if author is in one themselves
