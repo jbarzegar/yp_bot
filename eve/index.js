@@ -1,17 +1,20 @@
 // Deps
 const express = require('express');
-const logger = require('morgan');
+const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
-// Router
+// Db
+require('./db/db');
 
+// Router
+require('./router/router');
 // Models
 
 // All other express settings
 
 const app = express();
 
-app.use(logger('dev'));
+app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 

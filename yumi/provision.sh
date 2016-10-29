@@ -23,4 +23,7 @@ sudo apt-get install -qq -y \
     mongodb \
     > /dev/null
 
-sudo service mongodb start
+
+sudo cp /vagrant/yumi/mongodb.conf  /etc/mongodb.conf
+
+sudo service mongodb restart

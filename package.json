@@ -9,8 +9,8 @@
   },
   "author": "James Barzegar <james.barzegar@gmail.com>",
   "scripts": {
-    "jen": "nodemon jen/index.js --config jen/conf/nodemon.json",
-    "eve": "cd eve && vagrant up && vagrant ssh"
+    "jen": "nodemon --config jen/config/nodemon.json jen/bin/server.js",
+    "eve": "nodemon --config eve/config/nodemon.json eve/bin/server.js"
   },
   "license": "MIT",
   "engineStrict": true,
