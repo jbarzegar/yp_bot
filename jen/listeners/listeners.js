@@ -9,9 +9,9 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-  require('./on_message')(message, client);
+  require('./on_message')(message);
 });
 
-client.on('voiceStateUpdate', (oldMember, newMember) => {
+client.on('voiceStateUpdate', () => {
   getConnectedClients();
 });
