@@ -1,5 +1,0 @@
-{
-  "verbose": true,
-  "ignore": ["node_modules/*", "jen/*", "yumi/*", ".vagrant/*", ".git/*", "eve/config/nodemon.json"],
-  "watch": "eve"
-}
