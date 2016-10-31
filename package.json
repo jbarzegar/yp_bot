@@ -10,7 +10,6 @@
   "author": "James Barzegar <james.barzegar@gmail.com>",
   "scripts": {
     "jen": "nodemon --config jen/config/nodemon.json jen/bin/server.js",
-    "eve": "nodemon --config eve/config/nodemon.json eve/bin/server.js"
   },
   "license": "MIT",
   "engineStrict": true,
