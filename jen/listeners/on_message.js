@@ -5,7 +5,7 @@ const Channels = require('../conf/get-connected-clients');
 
 let message;
 
-const channelId = process.env.CHANNEL_ID || '237325959395672064';
+const channelId = process.env.CHANNEL_ID;
 
 function handleHalfVoicers() {
   const voiceChannels = Channels();

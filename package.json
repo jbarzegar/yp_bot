@@ -9,6 +9,8 @@
   },
   "author": "James Barzegar <james.barzegar@gmail.com>",
   "scripts": {
+    "cecile": "nodemon --ignore cecile/_build --ignore cecile/static/js cecile",
+    "cecile:build": " browserify cecile/_build/js/main.js -t [ babelify --presets [ es2015 ] ] | uglifyjs > cecile/static/js/main.js",
     "jen": "nodemon --config jen/config/nodemon.json jen/"
   },
   "license": "MIT",
@@ -17,16 +19,34 @@
     "node": "6.7.0"
   },
   "dependencies": {
+    "axis": "^0.6.1",
     "bluebird": "^3.4.6",
+    "body-parser": "^1.15.2",
     "chalk": "^1.1.3",
     "discord.js": "^9.3.0",
-    "moment": "^2.15.1"
+    "express": "^4.14.0",
+    "express-stylus": "^0.1.0",
+    "moment": "^2.17.1",
+    "mongoose": "^4.6.4",
+    "morgan": "^1.7.0",
+    "pug": "^2.0.0-beta6",
+    "request": "^2.79.0",
+    "stylus": "^0.54.5"
   },
   "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.18.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.3.0",
     "eslint": "^3.8.0",
     "eslint-config-standard": "^6.2.0",
     "eslint-plugin-promise": "^3.0.0",
     "eslint-plugin-standard": "^2.0.1",
-    "nodemon": "^1.11.0"
+    "gaze": "^1.1.2",
+    "nodemon": "^1.11.0",
+    "uglifyify": "^3.0.4",
+    "uglifyjs": "^2.4.10"
   }
 }
