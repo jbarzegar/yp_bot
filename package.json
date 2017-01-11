@@ -10,7 +10,7 @@
   "author": "James Barzegar <james.barzegar@gmail.com>",
   "scripts": {
     "cecile": "nodemon --ignore cecile/_build --ignore cecile/static/js cecile",
-    "cecile:build": " browserify cecile/_build/js/main.js -t [ babelify --presets [ es2015 ] ] | uglifyjs > cecile/static/js/main.js",
+    "cecile:build": "node cecile/bin/build.js --all",
     "jen": "nodemon --config jen/config/nodemon.json jen/"
   },
   "license": "MIT",
@@ -30,8 +30,7 @@
     "mongoose": "^4.6.4",
     "morgan": "^1.7.0",
     "pug": "^2.0.0-beta6",
-    "request": "^2.79.0",
-    "stylus": "^0.54.5"
+    "request": "^2.79.0"
   },
   "devDependencies": {
     "babel-core": "^6.21.0",
@@ -45,8 +44,8 @@
     "eslint-plugin-promise": "^3.0.0",
     "eslint-plugin-standard": "^2.0.1",
     "gaze": "^1.1.2",
+    "node-sass": "^4.2.0",
     "nodemon": "^1.11.0",
-    "uglifyify": "^3.0.4",
-    "uglifyjs": "^2.4.10"
+    "uglifyify": "^3.0.4"
   }
 }

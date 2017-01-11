@@ -13,13 +13,6 @@ app.set('views', CONFIG.VIEWS_DIR);
 app.set('view engine', 'pug');
 
 app.use(debug('dev'));
-app.use(stylus({
-  src: CONFIG.STYL_ENTRY,
-  dest: CONFIG.CSS_ENTRY,
-  compress: true,
-  use: [axis()],
-  import: ['axis']
-}));
 
 app.use(express.static(CONFIG.STATIC_ASSETS_DIR));
 
