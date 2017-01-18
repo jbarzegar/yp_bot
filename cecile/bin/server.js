@@ -1,6 +1,7 @@
 module.exports = () => {
-  const app = require('../app.js');
   const http = require('http');
+  const chalk = require('chalk');
+  const app = require('../app.js');
   const CONFIG = require('../conf/config');
   const logger = require('../helpers/logger');
 
@@ -39,9 +40,9 @@ module.exports = () => {
   const handleListen = () => {
     const addr = server.address();
     const bind = typeof addr === 'string'
-       ? 'pipe ' + addr
-       : 'port ' + addr.port;
-    logger.info(`Listing on: ${bind}`);
+       ? 'pipe: ' + addr
+       : 'port: ' + chalk.yellow(addr.port);
+    logger.log(`Listing on ${bind}`);
   };
 
   server.on('error', handleErr);

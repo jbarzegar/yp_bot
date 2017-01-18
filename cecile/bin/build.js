@@ -1,7 +1,7 @@
 const fs = require('fs');
 const browserify = require('browserify');
 const path = require('path');
-const logger = require('../helpers/logger');
+let logger = require('../helpers/logger');
 const CONFIG = require('../conf/config');
 
 const scss = require('node-sass');
@@ -9,20 +9,14 @@ const scss = require('node-sass');
 function checkCompileFlags() {
   const flag = process.argv[2];
   if (flag === '--js') {
-    compileJS(() => {
-      console.log('Compiled JS');
-    });
+    compileJS();
   } else if (flag === '--styles') {
     compileStyles();
   } else if (flag === '--all') {
     compileJS(() => {
-      logger.success('Compiled JS');
       compileStyles();
     });
-  } else {
-    logger.error('You must pass in 1 argument');
-    process.exit(1);
-  }
+  };
 }
 
 function handleErr() {
@@ -39,6 +33,7 @@ function compileJS(cb) {
     .transform('babelify', { presets })
     .transform('uglifyify')
     .bundle()
+    .on('end', () => logger.success('Compiled JS'))
     .on('error', () => handleErr)
     .pipe(fs.createWriteStream(exitPoint));
 
@@ -61,9 +56,11 @@ function compileStyles(cb) {
       if (err) {
         return logger.error(err);
       }
-      return console.log('Sass compiled');
+      return logger.success('Sass compiled');
     });
   });
 }
 
 checkCompileFlags();
+
+module.exports = { compileJS, compileStyles };
