@@ -8,5 +8,5 @@ node_modules/
 .vagrant
 
 # Cecile
-cecile/static/js/
-cecile/static/css/
+cecile/static/js
+cecile/static/css
