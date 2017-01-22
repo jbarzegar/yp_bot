@@ -1,0 +1,7 @@
+
+.editorconfig
+.eslintrc.json
+*.log
+.vagrant
+node_modules
+build/docker.env
