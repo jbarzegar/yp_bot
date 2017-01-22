@@ -1,5 +1,5 @@
 const client = require('../conf/client');
-const { logger } = require('../conf/config');
+const logger = require('../helpers/logger');
 const getConnectedClients = require('../conf/get-connected-clients');
 
 // Logs for ready state

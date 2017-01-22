@@ -6,3 +6,10 @@ node_modules/
 
 # Vagrant
 .vagrant
+
+# Cecile
+cecile/static/js
+cecile/static/css
+
+# Docker
+build/*.env
