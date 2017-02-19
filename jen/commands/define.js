@@ -6,7 +6,7 @@ module.exports = message => {
   const { isValidCommandStr, parseSingleCommandArg } = require('../helpers/command_reader');
 
   // Get the command reference
-  const command = '!define';
+  const command = `${config.commandPrefix}define`;
   // Base url for urban dictionary
   const udAPI = 'http://api.urbandictionary.com/v0/define?term=';
 
