@@ -17,7 +17,7 @@ module.exports = message => {
     } else {
       // If there are users connected to a voice channel check if author is in one themselves
       const user = message.member.voiceChannelID;
-      if (user === null) {
+      if (!user) {
         return handleMessage();
       }
       return;
@@ -27,7 +27,7 @@ module.exports = message => {
   function handleMessage() {
     messageHandler.delete(message);
 
-    const response = `Hey ${message.author.username}. You just tried to talk in channel: **${message.channel.name}** in server: **${message.guild.name}**.  You can't do that unless you're connected to a voice channel`;
+    const response = `Hey ${message.author.username}. You just tried to talk in channel: **${message.channel.name}** in server: **${message.guild.name}**.  You can't do that unless you're connected to a voice channel.`;
     // Send message to user
     return messageHandler.sendPrivateMessage(message, response);
   }
