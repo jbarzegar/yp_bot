@@ -1,6 +1,6 @@
 // Config json
 const config = {
-  token: process.env.JEN_BOT,
+  token: `Bot ${process.env.JEN_BOT}`,
   commandPrefix: '!'
 };
 
