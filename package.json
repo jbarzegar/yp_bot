@@ -1,7 +1,7 @@
 {
-  "name": "JenBot",
+  "name": "YPbot",
   "version": "1.0.0",
-  "description": "A discord bot for ESB",
+  "description": "A discord bot",
   "main": "index.js",
   "repository": {
     "url": "https://gitlab.com/jbarzegar/jen_bot",
@@ -9,9 +9,9 @@
   },
   "author": "James Barzegar <james.barzegar@gmail.com>",
   "scripts": {
-    "cecile": "nodemon --ignore cecile/_build --ignore cecile/static/js cecile",
-    "cecile:build": "node cecile/bin/build.js --all",
-    "jen": "nodemon --config jen/config/nodemon.json jen/"
+    "client": "nodemon --ignore client/_build --ignore client/static/js client",
+    "client:build": "node client/bin/build.js --all",
+    "bot": "nodemon --config bot/config/nodemon.json bot/"
   },
   "license": "MIT",
   "engineStrict": true,
