@@ -33,4 +33,4 @@ echo "-----------------------------------------------------------------"
 echo "BOT LOG STARTS BELOW"
 echo "-----------------------------------------------------------------"
 
-node /opt/bot/jen/index.js
+node /opt/bot/yp_bot/index.js

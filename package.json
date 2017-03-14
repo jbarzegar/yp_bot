@@ -4,7 +4,7 @@
   "description": "A discord bot",
   "main": "index.js",
   "repository": {
-    "url": "https://gitlab.com/jbarzegar/jen_bot",
+    "url": "https://github.com/jbarzegar/yp_bot",
     "type": "git"
   },
   "author": "James Barzegar <james.barzegar@gmail.com>",
