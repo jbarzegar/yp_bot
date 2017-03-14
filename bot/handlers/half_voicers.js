@@ -1,3 +1,5 @@
+const client = require('../conf/client');
+
 const Channels = require('../conf/get-connected-clients');
 const channelId = process.env.CHANNEL_ID;
 
@@ -17,7 +19,7 @@ module.exports = message => {
     } else {
       // If there are users connected to a voice channel check if author is in one themselves
       const user = message.member.voiceChannelID;
-      if (!user) {
+      if (!user && message.author.id !== client.user.id) {
         return handleMessage();
       }
       return;
