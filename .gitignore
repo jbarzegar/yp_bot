@@ -7,9 +7,7 @@ node_modules/
 # Vagrant
 .vagrant
 
-# Cecile
-cecile/static/js
-cecile/static/css
+.app
 
 # Docker
 build/*.env
