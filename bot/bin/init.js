@@ -1,4 +1,3 @@
-const client = require('../conf/client');
-const { token } = require('../conf/config');
+const connect = require('../helpers/connect');
 
-client.login(token);
+connect();

@@ -8,6 +8,11 @@ client.on('ready', () => {
   getConnectedClients();
 });
 
+client.on('disconnect', (event) => {
+  logger.log(event);
+  logger.error('Client has disconnected');
+});
+
 client.on('message', message => {
   require('./on_message')(message);
 });
