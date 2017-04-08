@@ -1,5 +1,5 @@
 // Store client object
 const Discord = require('discord.js');
-const client = new Discord.Client();
+const client = new Discord.Client({ autoReconnect: true });
 
 module.exports = client;
