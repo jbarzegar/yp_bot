@@ -1,34 +1,29 @@
-import React, { PropTypes } from 'react'
-import {
-  Link,
-} from 'react-router-dom'
+import React from 'react';
+// import logo from './bot.svg';
+import Logo from './bot';
+import './Nav.scss';
 
-const loginWithDiscord = () => {
-  const authUrl = 'https://discordapp.com/oauth2/authorize'
-  const clientId = '265942084488265728'
-  const scopes = 'identify'
-  const url = `${authUrl}?client_id=${clientId}&scope=${scopes}&response_type=code`
-  return url
-}
-
-const Nav = ({ isLoggedIn }) => (
-  <nav>
-    <ul>
-      <li>Home</li>
-      <li>Something</li>
-      {
-        isLoggedIn
-        ? <li> My account </li>
-        : <li>
-          <a href="http://localhost:5000/auth/login/">Login</a>
-        </li>
-      }
+const Nav = () => (
+  <nav id="App-nav">
+    {/* Left Side */}
+    <section className="nav-left">
+      <a href="/" className="nav-item">
+        <Logo />
+      </a>
+    </section>
+    {/* Right side */}
+    <ul className="nav-item">
+      <li className="nav-item">
+        About
+      </li>
+      <li className="nav-item">
+        Support
+      </li>
+      <li className="nav-item">
+        <button className="is-outlined is-primary">Sign in</button>
+      </li>
     </ul>
   </nav>
-)
+);
 
-Nav.propTypes = {
-  isLoggedIn: PropTypes.bool.isRequired,
-}
-
-export default Nav
+export default Nav;

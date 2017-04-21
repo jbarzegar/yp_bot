@@ -1,0 +1,25 @@
+@import 'vars';
+// Background and text
+$body-background: $primary-bg;
+$text: $primary-text-color;
+// Titles
+$title: $title-text-color;
+$subtitle: $title-text-color;
+// Shades
+$dark: $primary-bg-light;
+$black: $primary-bg-dark;
+// Color scheme
+$primary: $branding-primary;
+$info: $branding-info;
+$success: $branding-success;
+$warning: $branding-warning;
+$danger: $branding-danger;
+
+// Override
+button {
+  @extend .button;
+}
+
+nav {
+  @extend .nav;
+}
