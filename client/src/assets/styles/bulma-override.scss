@@ -23,3 +23,10 @@ button {
 nav {
   @extend .nav;
 }
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    @extend .title;
+    @extend .is-#{$i};
+  }
+}

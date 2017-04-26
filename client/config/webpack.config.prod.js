@@ -1,6 +1,7 @@
 'use strict';
 
 var autoprefixer = require('autoprefixer');
+var rucksack = require('rucksack-css');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -177,6 +178,7 @@ module.exports = {
           'not ie < 9', // React doesn't support IE8 anyway
         ]
       }),
+      rucksack(),
     ];
   },
   plugins: [

@@ -1,4 +1,31 @@
 @import '../globals';
 #App-nav {
   background-color: $primary-bg-dark;
+  padding: em(5) 0;
+  .nav-item {
+    align-items: stretch;
+    li {
+      align-items: center;
+    }
+  }
+  h2, span {
+    color: white;
+  }
+
+  h2, svg {
+    align-self: center;
+  }
+
+  h2 {
+    margin-bottom: 0;
+    font-weight: 600;
+  }
+
+  .beta-tag {
+    align-self: flex-end;
+    padding-bottom: em(5);
+  }
+  .heading-content {
+    padding-left: em(10);
+  }
 }

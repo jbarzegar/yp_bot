@@ -4,16 +4,23 @@ import {
   Route,
 } from 'react-router-dom';
 
+// Nav menu
 import Nav from './Nav/';
-import App from './App/';
+// Rendered components
+import Home from './Home/';
+import About from './About/';
+import Support from './Support/';
+
 
 const Routes = () => (
-  <div className="App-wrap">
-    <Nav />
-    <Router>
-      <Route exact path="/" component={App} />
-    </Router>
-  </div>
+  <Router>
+    <div className="App-wrap">
+      <Nav />
+      <Route exact path="/" component={Home} />
+      <Route exact path="/About" component={About} />
+      <Route exact path="/Support" component={Support} />
+    </div>
+  </Router>
 );
 
 export default Routes;

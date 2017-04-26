@@ -1,26 +1,47 @@
 import React from 'react';
-// import logo from './bot.svg';
-import Logo from './bot';
+import { Link } from 'react-router-dom';
 import './Nav.scss';
+import Logo from './logo';
+
+const discordLoginLink = () => {
+  const baseUrl = window.location.hostname;
+  const protocal = window.location.protocol;
+  const port = 5000;
+  const authEndpoint = 'auth/login/';
+  const url = `${protocal}//${baseUrl}:${port}/${authEndpoint}`;
+  return url;
+};
 
 const Nav = () => (
-  <nav id="App-nav">
+  <nav id="App-nav" className="has-shadow">
     {/* Left Side */}
     <section className="nav-left">
-      <a href="/" className="nav-item">
+      <Link to="/" className="nav-item">
         <Logo />
-      </a>
+        <div className="heading-content flex">
+          <h2>YP Bot</h2>
+          <span className="beta-tag">{'\u00A0'} beta</span>
+        </div>
+      </Link>
     </section>
     {/* Right side */}
     <ul className="nav-item">
       <li className="nav-item">
-        About
+        <Link to="/about">
+         About
+        </Link>
       </li>
       <li className="nav-item">
-        Support
+        <Link to="/support">
+         Support
+        </Link>
       </li>
       <li className="nav-item">
-        <button className="is-outlined is-primary">Sign in</button>
+        <a href={discordLoginLink()}>
+          <button className="is-outlined is-primary">
+            Sign in
+          </button>
+        </a>
       </li>
     </ul>
   </nav>

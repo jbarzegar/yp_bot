@@ -1,8 +1,8 @@
 import React from 'react';
-import './App.scss';
+import './Home.scss';
 
-const App = () => (
-  <div className="App">
+const Home = () => (
+  <div className="Home">
     <section className="hero-body">
       <div className="container">
         <h1 className="title">Hello world</h1>
@@ -18,4 +18,4 @@ const App = () => (
   </div>
 );
 
-export default App;
+export default Home;

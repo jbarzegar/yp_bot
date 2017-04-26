@@ -1,0 +1,5 @@
+@function em($px) {
+  $base: 16;
+  $emVal: $px / $base;
+  @return $emVal + em;
+}
