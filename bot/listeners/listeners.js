@@ -1,6 +1,9 @@
 const client = require('../conf/client');
-const logger = require('../helpers/logger');
+const connect = require('../helpers/connect');
+const Logger = require('../helpers/logger');
 const getConnectedClients = require('../conf/get-connected-clients');
+
+const logger = new Logger();
 
 // Logs for ready state
 client.on('ready', () => {
@@ -9,8 +12,9 @@ client.on('ready', () => {
 });
 
 client.on('disconnect', (event) => {
-  logger.log(event);
   logger.error('Client has disconnected');
+  client.destroy()
+    .then(() => connect());
 });
 
 client.on('message', message => {
