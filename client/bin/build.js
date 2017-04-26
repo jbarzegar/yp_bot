@@ -1,10 +1,12 @@
 const fs = require('fs');
 const browserify = require('browserify');
 const path = require('path');
-let logger = require('../helpers/logger');
+const Logger = require('../helpers/logger');
 const CONFIG = require('../conf/config');
 
 const scss = require('node-sass');
+
+const logger = new Logger();
 
 function checkCompileFlags() {
   const flag = process.argv[2];

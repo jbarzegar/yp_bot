@@ -1,9 +1,11 @@
 module.exports = message => {
   const request = require('request-promise');
-  const logger = require('../helpers/logger');
+  const Logger = require('../helpers/logger');
   const messageHandler = require('../helpers/message');
   const config = require('../conf/config');
   const { isValidCommandStr, parseSingleCommandArg } = require('../helpers/command_reader');
+
+  const logger = new Logger();
 
   // Get the command reference
   const command = `${config.commandPrefix}define`;
