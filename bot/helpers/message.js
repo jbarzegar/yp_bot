@@ -1,5 +1,7 @@
-const logger = require('./logger');
+const Logger = require('./logger');
 const client = require('../conf/client');
+
+const logger = new Logger();
 
 const messageAuthorSafety = message => {
   return new Promise((resolve, reject) => {

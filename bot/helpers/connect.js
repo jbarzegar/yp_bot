@@ -1,6 +1,8 @@
 const client = require('../conf/client');
 const { token } = require('../conf/config');
-const logger = require('./logger');
+const Logger = require('./logger');
+
+const logger = new Logger();
 
 function connect() {
   client.login(token)
