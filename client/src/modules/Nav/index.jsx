@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import './Nav.scss';
 import Logo from './logo';
 
@@ -12,7 +13,8 @@ const discordLoginLink = () => {
   return url;
 };
 
-const Nav = () => (
+/* eslint-disable react/prop-types */
+const Nav = user => (
   <nav id="App-nav" className="has-shadow">
     {/* Left Side */}
     <section className="nav-left">
@@ -28,23 +30,27 @@ const Nav = () => (
     <ul className="nav-item">
       <li className="nav-item">
         <Link to="/about">
-         About
+        About
         </Link>
       </li>
       <li className="nav-item">
         <Link to="/support">
-         Support
+        Support
         </Link>
       </li>
       <li className="nav-item">
-        <a href={discordLoginLink()}>
-          <button className="is-outlined is-primary">
-            Sign in
-          </button>
-        </a>
+        {
+          user !== {}
+          ? <img src={`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.jpg`} alt={user.username} />
+          : (<a href={discordLoginLink()}>
+            <button className="is-outlined is-primary">
+              Sign in
+            </button>
+          </a>)
+        }
       </li>
     </ul>
   </nav>
 );
 
-export default Nav;
+export default connect(state => state.user)(Nav);

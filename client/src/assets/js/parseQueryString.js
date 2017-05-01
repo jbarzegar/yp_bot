@@ -1,4 +1,4 @@
-const findQueryVar = variable => (
+const parseQueryString = variable => (
   new Promise((resolve, reject) => {
     const query = window.location.search.substring(1);
     const queryParams = query.split('&');
@@ -13,15 +13,4 @@ const findQueryVar = variable => (
   })
 );
 
-const checkForCode = () => (
-  new Promise((resolve, reject) => {
-    const token = findQueryVar('code');
-    if (token === null) {
-      reject(token);
-    } else {
-      resolve(token);
-    }
-  })
-);
-
-export default checkForCode;
+export default parseQueryString;

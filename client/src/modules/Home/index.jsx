@@ -1,11 +1,18 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import './Home.scss';
 
-const Home = () => (
+const Home = user => (
   <div className="Home">
     <section className="hero-body">
       <div className="container">
-        <h1 className="title">Hello world</h1>
+        <h1 className="title">
+          {
+            user !== {}
+            ? `Hello ${user.username}!`
+            : 'Hello World'
+          }
+        </h1>
         <p>
           Lorem ipsum dolor sit amet,
           consectetur adipisicing elit. Dolor inventore,
@@ -18,4 +25,4 @@ const Home = () => (
   </div>
 );
 
-export default Home;
+export default connect(state => state.user)(Home);
