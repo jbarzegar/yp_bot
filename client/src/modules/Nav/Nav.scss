@@ -28,4 +28,15 @@
   .heading-content {
     padding-left: em(10);
   }
+
+  .login-with-discord {
+    border: none;
+    color: #FFF;
+    background: #7289DA;
+    transition: background ease 0.3s;
+    &:hover {
+      background: darken(#7289DA, 10%);
+      color: white;
+    }
+  }
 }

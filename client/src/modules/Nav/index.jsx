@@ -9,8 +9,11 @@ const discordLoginLink = () => {
   const protocal = window.location.protocol;
   const port = 5000;
   const authEndpoint = 'auth/login/';
-  const url = `${protocal}//${baseUrl}:${port}/${authEndpoint}`;
-  return url;
+  if (window.YP_BOT_ENV === 'DEV') {
+    const url = `${protocal}//${baseUrl}:${port}/${authEndpoint}`;
+    return url;
+  }
+  return '';
 };
 
 /* eslint-disable react/prop-types */
@@ -40,13 +43,13 @@ const Nav = user => (
       </li>
       <li className="nav-item">
         {
-          user !== {}
-          ? <img src={`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.jpg`} alt={user.username} />
-          : (<a href={discordLoginLink()}>
-            <button className="is-outlined is-primary">
-              Sign in
+          !user.username
+          ? (<a href={discordLoginLink()}>
+            <button className="login-with-discord">
+              Login with Discord
             </button>
           </a>)
+          : <img src={`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.jpg`} alt={user.username} />
         }
       </li>
     </ul>

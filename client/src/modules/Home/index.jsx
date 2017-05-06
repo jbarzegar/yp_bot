@@ -8,9 +8,9 @@ const Home = user => (
       <div className="container">
         <h1 className="title">
           {
-            user !== {}
-            ? `Hello ${user.username}!`
-            : 'Hello World'
+            !user.username
+            ? 'Hello World'
+            : `Hello ${user.username}!`
           }
         </h1>
         <p>

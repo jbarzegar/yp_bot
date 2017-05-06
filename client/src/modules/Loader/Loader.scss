@@ -1,0 +1,21 @@
+@import '../globals';
+
+.Loader {
+  opacity: 1;
+  transition: opacity ease 0.5s;
+  position: fixed 0;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $primary-bg-light;
+  z-index: 9998;
+  span {
+    color: $primary-text-color;
+    font-size: em(50);
+    z-index: 9999;
+  }
+  &.hidden {
+    opacity: 0;
+  }
+}
