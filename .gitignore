@@ -10,6 +10,7 @@ node_modules/
 # Cecile
 cecile/static/js
 cecile/static/css
+client/.nuxt
 
 # Docker
 build/*.env

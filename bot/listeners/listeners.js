@@ -1,5 +1,4 @@
 const client = require('../conf/client');
-const connect = require('../helpers/connect');
 const Logger = require('../helpers/logger');
 const getConnectedClients = require('../conf/get-connected-clients');
 
@@ -11,16 +10,8 @@ client.on('ready', () => {
   getConnectedClients();
 });
 
-client.on('disconnect', (event) => {
-  logger.error('Client has disconnected');
-  client.destroy()
-    .then(() => connect());
-});
+client.on('disconnect', (event) => logger.error('Client has disconnected'));
 
-client.on('message', message => {
-  require('./on_message')(message);
-});
+client.on('message', message => require('./on_message')(message));
 
-client.on('voiceStateUpdate', () => {
-  getConnectedClients();
-});
+client.on('voiceStateUpdate', () => getConnectedClients());
